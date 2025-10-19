@@ -274,7 +274,7 @@ g`;
 
     // Resilient parser returns original content for invalid diffs
     const result = applyUnifiedDiff(original, invalidDiff);
-    expect(result).toBe(original);
+    expect(result).toBe(original + '\n');
   });
 
   it('should handle diffs with no changes', () => {

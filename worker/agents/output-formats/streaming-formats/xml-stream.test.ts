@@ -4,18 +4,19 @@
  */
 
 import { XmlStreamFormat, XmlStreamingCallbacks } from './xml-stream';
+import { vi } from 'vitest';
 
 describe('XmlStreamFormat', () => {
     let parser: XmlStreamFormat;
-    let mockCallbacks: jest.Mocked<XmlStreamingCallbacks>;
+    let mockCallbacks: any;
     
     beforeEach(() => {
         parser = new XmlStreamFormat();
         mockCallbacks = {
-            onElementStart: jest.fn(),
-            onElementContent: jest.fn(),
-            onElementComplete: jest.fn(),
-            onParsingError: jest.fn(),
+            onElementStart: vi.fn(),
+            onElementContent: vi.fn(),
+            onElementComplete: vi.fn(),
+            onParsingError: vi.fn(),
         };
     });
 
